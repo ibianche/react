@@ -7,6 +7,9 @@ class List extends React.Component {
     return (
       <section className={styles.component}>
       <h2 className={styles.subtitle}><Hero titleText={this.props.title} /></h2>
+        <div className={styles.description}>
+          {this.props.children}
+        </div>
     </section>
   )
   }
