@@ -22,7 +22,7 @@ class List extends React.Component {
         <div className={styles.description}>
           {this.props.children}
         </div>
-        <div className={styles.icon}>
+        <div className={styles.columns}>
           <Column>
             titleColumns={'Animals'};
             titleColumns={'Plants'};
