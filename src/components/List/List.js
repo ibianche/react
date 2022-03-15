@@ -4,6 +4,7 @@ import Hero from '../Hero/Hero';
 import PropTypes from 'prop-types';
 import Column from '../Column/Column';
 import {settings} from '../../data/dataStore';
+import Creator from '../Creator/Creator';
 
 class List extends React.Component {
   state = {
@@ -33,9 +34,31 @@ class List extends React.Component {
             <Column key={key} {...columnProps} />
           ))}
         </div>
+        <div className={styles.creator}>
+          <Creator text={settings.columnCreatorText} action={title => this.addColumn(title)}/>
+        </div>
     </section>
   )
   }
+
+  addColumn(title){
+    this.setState(state => (
+      {
+        columns: [
+          ...state.columns,
+          {
+            key: state.columns.length ? state.columns[state.columns.length-1].key+1 : 0,
+            title,
+            icon: 'list-alt',
+            cards: []
+          }
+        ]
+      }
+    ));
+  }
+
+
+
 }
 
 export default List;
