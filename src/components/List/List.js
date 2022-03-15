@@ -6,6 +6,10 @@ import Column from '../Column/Column';
 import {settings} from '../../data/dataStore';
 
 class List extends React.Component {
+  state = {
+    columns: this.props.columns || [],
+  }
+
   static propTypes = {
     title: PropTypes.node.isRequired,
     description: PropTypes.node,
@@ -25,9 +29,9 @@ class List extends React.Component {
           {this.props.description}
         </div>
         <div className={styles.columns}>
-          <Column titleColumns={'Animals'} />
-          <Column titleColumns={'Plants'} />
-          <Column titleColumns={'Minerals'} />
+          {this.state.columns.map(({key, ...columnProps}) => (
+            <Column key={key} {...columnProps} />
+          ))}
         </div>
     </section>
   )
