@@ -7,13 +7,13 @@ import List from '../List/List';
 
 class Column extends React.Component {
   static propTypes = {
-    titleColumns: PropTypes.node.isRequired,
+    title: PropTypes.node.isRequired,
   }
 
   render() {
     return(
       <main className={styles.component}>
-        <h3 className={styles.title}>{this.props.titleColumns}</h3>
+        <h3 className={styles.title}>{this.props.title}</h3>
       </main>
     )
   }
