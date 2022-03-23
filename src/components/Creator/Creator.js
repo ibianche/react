@@ -3,6 +3,7 @@ import styles from './Creator.scss';
 import Button from '../Button/Button';
 import PropTypes from 'prop-types';
 
+
 class Creator extends React.Component {
   static propTypes = {
     text: PropTypes.string,
