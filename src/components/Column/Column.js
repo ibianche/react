@@ -5,6 +5,7 @@ import List from '../List/List';
 import {settings} from '../../data/dataStore';
 import Card from '../Card/Card';
 import Creator from '../Creator/Creator';
+import Icon from "../Icon/Icon";
 
 
 
@@ -20,7 +21,11 @@ class Column extends React.Component {
   render() {
     return(
       <main className={styles.component}>
-        <h3 className={styles.title}>{this.props.title}</h3>
+        <h3 className={styles.title}>{this.props.title}>
+          <span className={styles.icon}>
+            <Icon name={this.props.name}/>
+          </span>
+        </h3>
 
         <div className={styles.cards}>
           {this.state.cards.map(({key, ...cardsProps}) => (
