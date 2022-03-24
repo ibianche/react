@@ -7,7 +7,8 @@ class Card extends React.Component {
   render() {
     return(
       <section className={styles.component}>
-        <h2 className={styles.title}>{listData.columns.cards}</h2>
+        <h2 className={styles.title}>{this.props.title}</h2>
+
       </section>
 
     )
