@@ -1,22 +1,23 @@
 import React from 'react';
 import styles from './Column.scss';
 import PropTypes from 'prop-types';
-import List from '../List/List';
 import {settings} from '../../data/dataStore';
 import Card from '../Card/Card';
 import Creator from '../Creator/Creator';
-import Icon from "../Icon/Icon";
+import Icon from '../Icon/Icon';
 
 
 
 class Column extends React.Component {
   state = {
     cards: this.props.columns || [],
-  }
+  };
 
   static propTypes = {
     title: PropTypes.node.isRequired,
-  }
+    columns:  PropTypes.node.isRequired,
+    icon: PropTypes.node.isRequired,
+  };
 
   render() {
     return(
@@ -37,7 +38,7 @@ class Column extends React.Component {
           <Creator text={settings.cardCreatorText} action={title => this.addCard(title)}/>
         </div>
       </main>
-    )
+    );
   }
 
   addCard(title){
@@ -49,9 +50,9 @@ class Column extends React.Component {
             key: state.cards.length ? state.cards[state.cards.length-1].key+1 : 0,
             title,
             icon: 'list-alt',
-            cards: []
-          }
-        ]
+            cards: [],
+          },
+        ],
       }
     ));
   }

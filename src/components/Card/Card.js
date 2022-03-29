@@ -1,9 +1,13 @@
 import React from 'react';
 import styles from './Card.scss';
-import {listData, settings} from '../../data/dataStore';
-import List from "../List/List";
+import PropTypes from 'prop-types';
+
+
 
 class Card extends React.Component {
+  static propTypes = {
+    title: PropTypes.node.isRequired,
+  };
   render() {
     return(
       <section className={styles.component}>
@@ -11,7 +15,7 @@ class Card extends React.Component {
 
       </section>
 
-    )
+    );
   }
 }
 export default Card;
