@@ -15,7 +15,7 @@ class Column extends React.Component {
 
   static propTypes = {
     title: PropTypes.node.isRequired,
-    columns:  PropTypes.node.isRequired,
+    columns:  PropTypes.node,
     icon: PropTypes.node.isRequired,
   };
 
